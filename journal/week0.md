@@ -50,6 +50,11 @@ gp env AWS_SECRET_ACCESS_KEY="tE40HNj0G0C/WZZxOKjHixV7UTAXH"
 gp env AWS_DEFAULT_REGION="ap-south-1"
 ```
 
+#### Output of Gitpod Environment Variables
+
+![Gitpod Environment Variables](assets/week0_gp_variables.png)
+
+
 ### Created an AWS Budget
 
 [aws budgets create-budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html)
@@ -109,6 +114,10 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 ![Billing Alarm](assets/week0_billing_alarm.png)
 
 
+## Challenges
 
+- When I tried to commit my changes that I did using gitpod on my repository, It said ~~access denied~~.<br>
+**Solution** - We need to change the [gitpod User Settings](https://gitpod.io/user/integrations) (Integration)
+![gitpod integration setting](assets/week0_gitpod_access.png)
 
 
