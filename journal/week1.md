@@ -156,3 +156,29 @@ Here's the [code changes](https://github.com/tejas0207/aws-bootcamp-cruddur-2023
 Here's the Output 
 
 ![Notification page](assets/week1_added_notificationpage.png)
+
+## Homework Challenges
+1. Run the dockerfile CMD as an external script
+2. Push and tag a image to DockerHub
+3. Launch an EC2 instance that has docker installed, and pull a container to demonstrate you can run your own docker processes.
+
+I have clubed this 3 challenges and created a solution for it.
+
+To run the CMD instruction in a Dockerfile as an external script, I created a `Dockerfile` and an external script `script.sh`
+
+```
+FROM python
+COPY script.sh /
+RUN chmod +x /script.sh
+
+CMD ["./script.sh"]
+```
+```
+#!/bin/bash
+
+echo "Testing external script for Dockerfile!"
+```
+
+
+
+
