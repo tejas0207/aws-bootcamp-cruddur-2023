@@ -14,6 +14,19 @@ from services.create_message import *
 from services.show_activity import *
 from services.notifications_activity import *
 
+#cloudwatch
+# import watchtower
+# import logging
+# from time import strftime
+# LOGGER = logging.getLogger(__name__)
+# LOGGER.setLevel(logging.DEBUG)
+# console_handler = logging.StreamHandler()
+# cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+# LOGGER.addHandler(console_handler)
+# LOGGER.addHandler(cw_handler)
+# LOGGER.info("some message")
+
+
 #honeycomb-----
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
@@ -29,6 +42,8 @@ processor = BatchSpanProcessor(OTLPSpanExporter())
 provider.add_span_processor(processor)
 trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
+
+
 
 # Initialize automatic instrumentation with Flask
 app = Flask(__name__)
@@ -69,6 +84,8 @@ def data_messages(handle):
     return model['data'], 200
   return
 
+
+
 @app.route("/api/messages", methods=['POST','OPTIONS'])
 @cross_origin()
 def data_create_message():
@@ -82,6 +99,9 @@ def data_create_message():
   else:
     return model['data'], 200
   return
+
+
+
 
 @app.route("/api/activities/home", methods=['GET'])
 def data_home():

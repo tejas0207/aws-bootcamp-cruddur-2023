@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 class UserActivities:
   def run(user_handle):
+
     model = {
       'errors': None,
       'data': None
